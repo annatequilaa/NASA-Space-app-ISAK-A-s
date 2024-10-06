@@ -19,7 +19,7 @@ After we have the music generated from the image using the algorithm we have cre
 
 ## Prototype Website
 Link to the website (prototype, does not work right now because we don't have enough time to implement the algorithm on the website):
-https://github.com/annatequilaa/NASA-Space-app-ISAK-A-s
+https://annatequilaa.github.io/NASA-Space-app-ISAK-A-s/webpage_final_product/homepage.html
 
 ### How is it supposed to work?
 This is the website where the finished videos (generated music and pictures merged together) would be displayed. Users would be able to browse through the different product videos with the arrows on the left and the right. Users would also be able to access the link to NASA's gallery webpage for the James Webb Space Telescope. Furthermore, users would be able to upload (or select) space images they want to be turned into music from. 

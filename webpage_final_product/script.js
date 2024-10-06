@@ -1,55 +1,48 @@
-const videoPlayer = document.getElementById("video-player");
-const videoTitle = document.getElementById("video-title");
-const videoDescription = document.getElementById("video-description");
-
+// Array of video objects
 const videos = [
-  {
-    src: "video1.mp4",
-    title: "Video Title 1",
-    description: "Description of the first video."
-  },
-  {
-    src: "video2.mp4",
-    title: "Video Title 2",
-    description: "Description of the second video."
-  },
-  {
-    src: "video3.mp4",
-    title: "Video Title 3",
-    description: "Description of the third video."
-  }
+    {
+        src: 'video1.mp4',
+        title: 'Video Title 1',
+        description: 'Description of the first video.'
+    },
+    {
+        src: 'video2.mp4',
+        title: 'Video Title 2',
+        description: 'Description of the second video.'
+    },
+    {
+        src: 'video3.mp4',
+        title: 'Video Title 3',
+        description: 'Description of the third video.'
+    }
 ];
 
+// Current video index
 let currentIndex = 0;
 
-function updateVideo(index) {
-  videoPlayer.src = videos[index].src;
-  videoTitle.textContent = videos[index].title;
-  videoDescription.textContent = videos[index].description;
+// Function to update the video player
+function updateVideo() {
+    const videoPlayer = document.getElementById('video-player');
+    const videoTitle = document.getElementById('video-title');
+    const videoDescription = document.getElementById('video-description');
+
+    // Update video source and reload
+    videoPlayer.src = videos[currentIndex].src;
+    videoTitle.textContent = videos[currentIndex].title;
+    videoDescription.textContent = videos[currentIndex].description;
+    videoPlayer.load();
 }
 
-document.getElementById("prev-btn").addEventListener("click", () => {
-  currentIndex = currentIndex > 0 ? currentIndex - 1 : videos.length - 1;
-  updateVideo(currentIndex);
+// Event listeners for buttons
+document.getElementById('prev-btn').addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : videos.length - 1;
+    updateVideo();
 });
 
-document.getElementById("next-btn").addEventListener("click", () => {
-  currentIndex = currentIndex < videos.length - 1 ? currentIndex + 1 : 0;
-  updateVideo(currentIndex);
+document.getElementById('next-btn').addEventListener('click', () => {
+    currentIndex = (currentIndex < videos.length - 1) ? currentIndex + 1 : 0;
+    updateVideo();
 });
 
-// Handle image upload
-const uploadInput = document.getElementById("upload-input");
-const uploadedImage = document.getElementById("uploaded-image");
-
-uploadInput.addEventListener("change", function () {
-  const file = this.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      uploadedImage.src = e.target.result;
-      uploadedImage.classList.remove("hidden");
-    };
-    reader.readAsDataURL(file);
-  }
-});
+// Initial video load
+updateVideo();

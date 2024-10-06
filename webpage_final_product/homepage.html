@@ -17,12 +17,13 @@
       <label for="upload-input" class="upload-btn" style="margin-right: 20px">Upload Image</label>
       <input type="file" id="upload-input" accept="image/*" hidden>
       <img id="uploaded-image" src="#" alt="Uploaded Image" class="hidden">
-
+      
+      <label for="upload-input-gallery" class="upload-btn">View Full JWST Image Gallery</label>
       <a href="https://science.nasa.gov/mission/webb/multimedia/images/">
-      <label for="upload-input" class="upload-btn" style="margin-right: 20px">View Full JWST Image Gallerye</label>
-      <img id="uploaded-image" src="#" alt="Uploaded Image" class="hidden">
+        <img id="uploaded-image-gallery" src="#" alt="Uploaded Image" class="hidden">
       </a>
     </header>
+
     <div class="video-section">
       <button id="prev-btn" class="arrow-btn">←</button>
       <video id="video-player" controls>
@@ -30,18 +31,67 @@
       </video>
       <button id="next-btn" class="arrow-btn">→</button>
     </div>
+    
     <div class="video-info">
       <h2 id="video-title">Video Title 1</h2>
       <p id="video-description">Description of the first video.</p>
     </div>
-    
   </div>
 
   <footer class="footer">
     <p>&copy; Made by Nhan, Ridhanyaa, Ann (2024). Background image: ASPIRE-—-Filament-of-10-galaxies-captured-by-NIRCam.png from Canadia Space Agency's JWST database. </p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Array of video objects
+    const videos = [
+        {
+            src: 'video1.mp4',
+            title: 'Video Title 1',
+            description: 'Description of the first video.'
+        },
+        {
+            src: 'video2.mp4',
+            title: 'Video Title 2',
+            description: 'Description of the second video.'
+        },
+        {
+            src: 'video3.mp4',
+            title: 'Video Title 3',
+            description: 'Description of the third video.'
+        }
+    ];
+
+    // Current video index
+    let currentIndex = 0;
+
+    // Function to update the video player
+    function updateVideo() {
+        const videoPlayer = document.getElementById('video-player');
+        const videoTitle = document.getElementById('video-title');
+        const videoDescription = document.getElementById('video-description');
+
+        // Update video source and reload
+        videoPlayer.src = videos[currentIndex].src;
+        videoTitle.textContent = videos[currentIndex].title;
+        videoDescription.textContent = videos[currentIndex].description;
+        videoPlayer.load();
+    }
+
+    // Event listeners for buttons
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : videos.length - 1;
+        updateVideo();
+    });
+
+    document.getElementById('next-btn').addEventListener('click', () => {
+        currentIndex = (currentIndex < videos.length - 1) ? currentIndex + 1 : 0;
+        updateVideo();
+    });
+
+    // Initial video load
+    updateVideo();
+  </script>
 
 </body>
 

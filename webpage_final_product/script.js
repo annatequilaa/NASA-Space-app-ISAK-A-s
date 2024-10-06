@@ -1,17 +1,17 @@
 // Array of video objects
 const videos = [
     {
-        src: 'video1.mp4',
-        title: 'Video Title 1',
-        description: 'Description of the first video.'
+        src: 'https://drive.google.com/file/d/1Kca0AoCyfqSz_EL2CGjdeAeqxOmfcIjw/view?usp=drive_link',
+        title: 'Nebula',
+        description: 'This is a purple neblua (we'll change the caption based on the NASA website's information.'
     },
     {
-        src: 'video2.mp4',
+        src: 'https://drive.google.com/file/d/1aoa1VW96dsn7dETOU5XDJMH0lqMxeZwB/view?usp=drive_link',
         title: 'Video Title 2',
         description: 'Description of the second video.'
     },
     {
-        src: 'video3.mp4',
+        src: 'https://drive.google.com/file/d/1Ldj8sRJf5AAN5DPhN4w5pBCMbrnFS4Ua/view?usp=drive_link',
         title: 'Video Title 3',
         description: 'Description of the third video.'
     }

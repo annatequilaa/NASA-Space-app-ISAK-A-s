@@ -3,12 +3,15 @@
 
 We appreciate your patience and time for reading this. We hope you enjoy our project: Astral Harmony, where we merge music and visual art using technology, psychology, and musical theory. 
 
+## Demo Video
+Link to YouTube video that Ridhanyaa made: https://www.youtube.com/watch?v=QnGxxXkW1S0
+
 ## Algorithm
 This is the core of our project: the algorithm that transforms images into music. We split up each image into smaller square chunks, and derive the average hue, saturation, and brightness. Using these values, we generate a main melody and accompaniment based on the image. We have implemented color theory as well as musical theories such as varied chord progressions, volume, rhythm, tempo, and syncopation. We have also implemented psychology as we understand that certain keys, such as major and minor, are associated with different colors (e.g. major keys -> bright, vibrant colors; minor keys -> dark, muted colors). 
 
 You can access the code of our algorithm in the folder "code"
 
-## Videos
+## Music Videos
 Link to the Google Drive: https://drive.google.com/drive/folders/1wRHVE7YFINcrVbLQtEP7CzKCUDGCXqFu?usp=sharing
 
 ### What are these videos?

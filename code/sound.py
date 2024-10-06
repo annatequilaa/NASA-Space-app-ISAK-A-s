@@ -1,4 +1,4 @@
-from music21 import stream, note, midi, instrument
+from music21 import stream, note
 from PIL import Image
 import os
 from pydub import AudioSegment
@@ -37,12 +37,10 @@ def split_image(size, imagee):
 
     return chunk_attributes
 
-
-
 def generate_pitch(h: int) -> int:
     lowest_h = 0
     highest_h = 360
-    lowest_midi = 36  # Lowest MIDI note
+    lowest_midi = 36  # Lowest MIDI note for piano
     highest_midi = 108  # Highest MIDI note
     note_interval = (highest_h - lowest_h) / (highest_midi - lowest_midi)
     return lowest_midi + round(h / note_interval)
@@ -50,12 +48,12 @@ def generate_pitch(h: int) -> int:
 def generate_loudness(s: int) -> int:
     lowest_s = 0
     highest_s = 100
-    lowest_db = 40
-    highest_db = 60
+    lowest_db = 50
+    highest_db = 70
     loud_interval = (highest_s - lowest_s) / (highest_db - lowest_db)
     return lowest_db + round(s / loud_interval)
 
-def generate_timbre(v: int) -> int:
+def generate_chord_type(v: int) -> int:
     lowest_v = 0
     highest_v = 100
     lowest_timbre = 0
@@ -86,7 +84,7 @@ def generate_melody(chunk_info: list, note_duration: float, last_note=None):
 
 def generate_piano(chunk_info: list, note_duration: float) -> note.Note:
     pitch = generate_pitch(chunk_info[0])
-    timbre = generate_timbre(chunk_info[1])
+    timbre = generate_chord_type(chunk_info[1])
     loudness = generate_loudness(chunk_info[2])
 
     if timbre == 0:
@@ -203,7 +201,7 @@ for name in names:
         melody_notes, last_melody_note = generate_melody(chunk_info, 1.5, last_melody_note)
         melody.append(melody_notes)
 
-    # Save the melody and supporting chords
+    # Save the melody and piano accompaniment,
     melody.write('midi', fp=f'{name}.mid')
     piano.write('midi', fp=f'{name}piano.mid')
 

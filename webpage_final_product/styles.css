@@ -1,0 +1,179 @@
+/* Global styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: black; /* Fallback for all browsers */
+    background: url('bg.jpg') no-repeat center center fixed; /* Space-themed background */
+    background-size: cover;
+    color: #E0E0E0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for content */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1); /* Subtle glow */
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+/* Main title with glowing effect */
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    color: #E0E0E0;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4), 0px 0px 20px rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+}
+
+/* Video section */
+.video-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Navigation arrows */
+.arrow-btn {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    font-size: 28px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+.arrow-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.3);
+}
+
+#prev-btn {
+    left: -40px;
+}
+
+#next-btn {
+    right: -40px;
+}
+
+/* Video info section */
+.video-info h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    color: #E0E0E0;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4), 0px 0px 20px rgba(255, 255, 255, 0.4);
+    margin-bottom: 10px;
+}
+
+.video-info p {
+    font-size: 18px;
+    font-weight: 300;
+    color: #A0A0A0;
+    line-height: 1.6;
+}
+
+/* Upload button */
+/* Upload button positioned in the top-right */
+.upload-container {
+    position: absolute;
+    top: 20px;  /* Space from the top */
+    right: 20px; /* Space from the right */
+    margin-top: 0; /* Remove top margin */
+}
+
+/* Styling for the upload button */
+.upload-btn {
+    background-color: rgba(255, 255, 255, 0.1); /* Match background */
+    color: #E0E0E0; /* Light gray text for consistency */
+    padding: 12px 30px; /* Padding */
+    font-size: 16px; /* Font size */
+    border-radius: 8px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2); /* Subtle shadow effect */
+}
+
+.upload-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3); /* More pronounced shadow on hover */
+}
+
+
+
+#uploaded-image {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .arrow-btn {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    video {
+        max-width: 90%;
+    }
+
+    #uploaded-image {
+        max-width: 90%;
+    }
+}
+/* Footer styling */
+.footer {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    padding: 10px 0; /* Padding for vertical space */
+    text-align: center; /* Center align text */
+    position: absolute; /* Positioning it at the bottom */
+    bottom: 0; /* Stick it to the bottom */
+    left: 0; /* Align left */
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    z-index: 10; /* Make sure it stays above other content */
+}
+
+.footer p {
+    color: #A0A0A0; /* Light gray text */
+    font-size: 10px; /* Font size */
+    margin: 0; /* Remove default margin */
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3); /* Light shadow for depth */
+}

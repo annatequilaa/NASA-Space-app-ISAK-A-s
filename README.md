@@ -2,6 +2,7 @@
 ### by Ridhanyaa, Nhan, and Ann (Students from UWC ISAK Japan)
 
 We appreciate your patience and time for reading this. We hope you enjoy our project: Astral Harmony, where we merge music and visual art using technology, psychology, and musical theory. 
+Project link: https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/isak-as/?tab=project
 
 ## Demo Video
 Link to YouTube video that Ridhanyaa made: https://www.youtube.com/watch?v=QnGxxXkW1S0
